@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+    {% block title %}
+        Home
+    {% endblock title %}
+
+    {% block content %}
+      {% if user.is_authenticated %}
+            Hi {{ user.username }}
+            <p>
+                <form action="{% url 'logout'%}" method="post">
+                    {% csrf_token %}
+                 <button>Log Out</button>
+                </form>
+            </p>
+        {% else %}
+        <p>
+           you are not login
+        </p>
+        <a href="{%url 'login' %}">login</a>|
+        <p>
+            <a href="{% url 'signup'  %}">Sign Up</a>
+        </p>
+        
+            {% endif %}
+
+    {% endblock content %}
