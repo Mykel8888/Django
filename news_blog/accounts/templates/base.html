@@ -30,10 +30,13 @@
                             <a href="#"  class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false"> {{ user.username }}</a>
                             <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
                                 <li>
-                                    <a href="{% url 'password_change'%}" class="dropdown-item"> Change password</a> <!--django has a aothomatic for password_change-->
+                                    <a href="{% url 'password_changes'%}" class="dropdown-item"> Change password</a> <!--django has a aothomatic for password_change-->
                                 </li>
                                 <li>
-                                    <a  class="dropdown-item" href="{% url 'logout' %}"> Logout </a>
+                                    <form action="{% url 'logout' %}" method="post">
+                                        {% csrf_token %}
+                                     <button>Log Out</button>
+                                    </form>
                                 </li>
                             </ul>
                         </div>

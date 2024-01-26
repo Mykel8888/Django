@@ -8,8 +8,9 @@
     {% block content %}
       {% if user.is_authenticated %}
             Hi {{ user.username }}
+            <p><a href="{% url 'password_changes'%}">password_change</a></p>
             <p>
-                <form action="{% url 'logout'%}" method="post">
+                <form action="{% url 'logout' %}" method="post">
                     {% csrf_token %}
                  <button>Log Out</button>
                 </form>

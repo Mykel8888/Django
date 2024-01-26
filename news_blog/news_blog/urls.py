@@ -14,13 +14,22 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import TemplateView
+from django.contrib.auth.views import PasswordChangeView
+from django.contrib.auth import views as auth_views
+
+#app_name = 'myapp'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls')), #app url()
-    path('accounts/', include('django.contrib.auth.urls')),#url inbuit login,logout,passwordreset
-    path('', TemplateView.as_view(template_name='home.html'), #landing page
-         name='home'),
-]
+   path('accounts/', include('accounts.urls')),  # app url()
+    
+    # Override PasswordChangeView with custom template
+    # Include other authentication URLs with custom templates
+    path('accounts/', include('django.contrib.auth.urls')),
+    
+    path('', TemplateView.as_view(template_name='home.html'),  # landing page
+         name='home'),]
