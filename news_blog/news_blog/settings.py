@@ -39,14 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #3rd patty
     'crispy_forms',
-    #new
     'crispy_bootstrap5',
-    #new
     #local
     'accounts.apps.AccountsConfig',
+    'articles.apps.ArticlesConfig'#new
 
 
 ]
+
+TIME_ZONE = "America/New_york" #new
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -141,5 +142,33 @@ LOGIN_REDIRECT_URL = 'home'#new
 LOGOUT_REDIRECT_URL = 'home'#new
 
 #new
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-CRISPY_TEMPLATE_PACK = 'bootstrap5'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5" #new
+CRISPY_TEMPLATE_PACK = 'bootstrap5' #new
+
+#EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" #new
+
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+#EMAIL_HOST_USER = '7efd41bbbb1627'
+#EMAIL_HOST_PASSWORD = 'e8ce9a6e80da78'
+#EMAIL_PORT = '2525'
+
+
+
+
+
+# Django Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True  # Use TLS for secure connection
+EMAIL_USE_SSL = False  # Do not use SSL for TLS to work
+EMAIL_HOST_USER = 'michaelbible05@gmail.com'  # Replace with your Gmail address
+EMAIL_HOST_PASSWORD = 'yzgo erov aujn zgzr'  # Replace with your Gmail password or app password
+
+# Yagmail settings
+YAGMAIL_EMAIL = 'michaelbible05@gmail.com'
+YAGMAIL_PASSWORD = 'yzgo erov aujn zgzr'
+YAGMAIL_SMTP_FILE = '/accounts/yagmail_smtp.json'
+
+ 

@@ -11,14 +11,35 @@ def num():
 nums = input("enter the country code: ")
 def add(nums):
     nums += num()
-
     return nums
-if len(nums) < 3:
-   print("wrong entry")
-else:
-    total_num=int(input("how any number do you want: "))
-    for n in range(0, total_num):
-        join = add(nums)
-        if join=="7065345904":
-            print(f"your number is {join} you win")
-        print(join)
+
+
+def list_num(data):
+    for n in data:
+        print(n)
+
+def proce():
+    valid = []
+    if len(nums) < 3:
+        print("wrong entry")
+    else:
+        
+        total_num=int(input("how many number do you want: "))
+        for n in range(0, total_num):
+            join = add(nums)
+            if join not in valid:
+                valid.append(join) 
+    #print(valid)
+    return valid
+
+#proce()
+list_num(proce())
+
+def test(*argv):
+    #data = argv[0]
+    if isinstance(argv[0], str):
+        print("success")
+    else:
+        print("fail")
+
+#test(45)

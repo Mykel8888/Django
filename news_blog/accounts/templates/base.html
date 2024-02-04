@@ -19,7 +19,7 @@
                     <ul  class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center md-md-0">
                         {% if user.is_authenticated %}
                         <li >
-                            <a href="#" class="nav-link px-2 link-dark"> + New</a>
+                            <a href="{% url 'new_article' %}" class="nav-link px-2 link-dark"> New article</a>
                         </li>
     
                     </ul>

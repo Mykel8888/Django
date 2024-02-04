@@ -30,6 +30,6 @@ urlpatterns = [
     # Override PasswordChangeView with custom template
     # Include other authentication URLs with custom templates
     path('accounts/', include('django.contrib.auth.urls')),
-    
+    path('articles/', include('articles.urls')),  
     path('', TemplateView.as_view(template_name='home.html'),  # landing page
          name='home'),]

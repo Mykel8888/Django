@@ -1,4 +1,4 @@
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordResetForm
 
 from .models import CustomUser
 
@@ -14,3 +14,7 @@ class CustomUserChangeForm(UserChangeForm):
     class Meta:
         model = CustomUser
         fields = ('username', 'email', 'age', 'name', 'date',"mike" )
+
+class CustomPasswordResetForm(PasswordResetForm):
+    pass
+    # Add your custom form fields or override methods if needed

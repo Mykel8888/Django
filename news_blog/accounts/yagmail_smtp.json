@@ -1,0 +1,12 @@
+{
+    "gmail": {
+        "username": "your_email@gmail.com",
+        "oauth2_file": null,
+        "token_file": null,
+        "host": "smtp.gmail.com",
+        "port": 587,
+        "smtp_starttls": true,
+        "smtp_ssl": false,
+        "smtp_skip_login": false
+    }
+}
